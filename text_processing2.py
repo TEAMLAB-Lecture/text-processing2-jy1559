@@ -71,5 +71,5 @@ def to_camel_case(underscore_str):
     camelcase_str = ''
     for x in a:
         if x: camelcase_str += x.upper()[0] + x.lower()[1:]
-    if camelcase_str: camelcase_str[0] = camelcase_str[0].lower()
+    if camelcase_str: camelcase_str = camelcase_str[0].lower() + camelcase_str[1:]
     return camelcase_str
