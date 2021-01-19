@@ -28,8 +28,11 @@ def digits_to_words(input_string):
             >>> tp2.digits_to_words(digits_str2)
             'three one four one five'
     """
-    digit_string = None
-    return digit_string
+    numbers = ['zero ', 'one ','two ','three ','four ','five ','six ','seven ','eight ','nine ']
+    digit_string = ''
+    for x in input_string:
+        if x.isdecimal: digit_string += numbers[int(x)]
+    return digit_string[:-1]
 
 
 """
@@ -64,5 +67,9 @@ def to_camel_case(underscore_str):
             >>> tp2.to_camel_case(underscore_str3)
             "alreadyCamel"
     """
-    camelcase_str = None
+    a = underscore_str.split('_')
+    camelcase_str = ''
+    for x in a:
+        if x: camelcase_str += x.upper()[0] + x.lower()[1:]
+    if camelcase_str: camelcase_str[0] = camelcase_str[0].lower()
     return camelcase_str
